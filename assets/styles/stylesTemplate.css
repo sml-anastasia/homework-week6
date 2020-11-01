@@ -20,7 +20,7 @@ a {
 }
 
 /* основной блок, грид-элемент, грид-контейнер из 12 колонок для хедера, заголовка, интро и поля поиска */
-.main {
+#main {
     /*background-image: url("assets/images/mainphoto.png");*/
     background: linear-gradient(0.87deg, rgba(2, 55, 135, 0.9) 0.69%, rgba(81, 38, 174, 0.4736) 100.48%, rgba(38, 92, 174, 0.0102906) 100.49%, rgba(195, 195, 196, 0.00520833) 100.5%, #76A6EF 100.51%);
 
@@ -37,7 +37,7 @@ a {
 }
 
 /* хедер, грид-элемент, грид-контейнер для лого и меню */
-.header {
+#header {
     grid-row: 2/3;
     grid-column: 2/12;
 
@@ -49,13 +49,13 @@ a {
 }
 
 /* логотип, грид-элемент */
-.logo {
+#logo {
     grid-row: 1/2;
     grid-column: 1/2;
 }
 
 /* меню хедера, грид-элемент, гри-контейнер для ссылок */
-.navheader {
+#navheader {
     grid-row: 1/2;
     grid-column: 2/3;
 
@@ -95,7 +95,7 @@ a {
 }
 
 /* настройки заголовка основного блока */
-.h1 {
+#h1 {
     font-weight: 700;
     font-style: normal;
     font-size: 60px;
@@ -104,7 +104,7 @@ a {
 }
 
 /* настройки текста-введения */
-.intro {
+#intro {
     font-weight: 400;
     font-style: normal;
     font-size: 29px;
@@ -114,7 +114,7 @@ a {
 }
 
 /* поле поиска, грид-элемент, грид-контейнер */
-.searchfield {
+#searchfield {
     background: white;
     grid-row: 10/12;
     grid-column: 2/12;
@@ -164,7 +164,7 @@ a {
 }
 
 /* кнопка поиска */
-.searchbutton {
+.sfbutton {
     background-color: rgb(255, 200, 57);
 
     grid-row: 2/3;
@@ -180,7 +180,7 @@ a {
 }
 
 /* первый раздел с тремя фото, грид-элемент; флекс для выравнивания по центру */
-.examples {
+#examples {
     /*background-color: burlywood;*/
 
     height: 700px;
@@ -193,7 +193,7 @@ a {
 }
 
 /* блок с фотографиями и текстовыми прямоугольниками, флекс-контейнер */
-.photos {
+#photos {
     margin: auto;
 
     width: 1000px;
@@ -262,7 +262,7 @@ a {
 }
 
 /* третий блок, грид-элемент, грид-контейнер для преимуществ, иконок, фото и цветного прямоугольника */
-.section2 {
+#features {
     /*background-color: darkkhaki;*/
     grid-row: 3/4;
     grid-column: 1/13;
@@ -274,7 +274,7 @@ a {
 }
 
 /* заголовок второго блока */
-.s2h2 {
+#fh2 {
     grid-row: 1/2;
     grid-column: 2/7;
     font-size: 36px;
@@ -290,7 +290,7 @@ a {
 }
 
 /* фото справа */
-.s2photo {
+.fphoto {
     height: 477px;
     width: auto;
 
@@ -299,7 +299,7 @@ a {
 }
 
 /* цветной прямоугольник */
-.bgrectangle {
+.frectangle {
     background-color: rgb(255, 200, 57);
 
     height: 377px;
