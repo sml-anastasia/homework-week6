@@ -1,16 +1,17 @@
 /* настройки для всего документа: цвет текста, шрифт, ширина */
 html {
     font-family: Nunito, sans-serif;
-    width: auto;
+    width: 100%;
 }
 
 /* настройки тела документа, грид-контейнер из 12 колонок и _____ строк */
 body {
-    width: auto;
+    width: 100%;
     height: auto;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(auto-fit(12, max-content));
+    grid-template-rows: repeat(auto-fit(8, max-content));
+    grid-row-gap: 2rem;
 }
 
 /* настройки всех ссылок: белые, без оформления */
@@ -27,7 +28,7 @@ a {
     color: rgb(255, 255, 255);
 
     height: 865px;
-    width: auto;
+    width: 100%;
     grid-row: 1/2;
     grid-column: 1/13;
 
@@ -35,6 +36,13 @@ a {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
 }
+
+/*#background {
+    grid-row: 1/2;
+    grid-column: 1/13;
+    z-index: -1;
+    width: 100%;
+}*/
 
 /* хедер, грид-элемент, грид-контейнер для лого и меню */
 #header {
@@ -373,4 +381,331 @@ a {
 
     align-self: center;
     font-size: 1em;
+}
+
+/* секция для отправки телефона */
+#telephone {
+    grid-row: 4/5;
+    grid-column: 1/13;
+
+    display: grid;
+    grid-template-columns: 1fr 90% 1fr;
+}
+
+/* желтый прямоугольник с текстом и формой */
+#tel {
+    background-color: #FFF5DA;
+    grid-column: 2/3;
+
+    padding: 7rem;
+    margin: 3rem;
+}
+
+/* заголовок над белым прямоугольником с формой */
+#telh2 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2em;
+    line-height: 39px;
+    color: #323232;
+    width: auto;
+}
+
+/* текст над белым прямоугольником с формой */
+.teltext {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5em;
+    color: #646464;
+    width: auto;
+}
+
+/* белый прямоугольник с формой и кнопкой */
+.telform {
+    width: 600px;
+    height: 50px;
+    background-color: #ffffff;
+
+    display: grid;
+    grid-template-columns: 0.5fr 3fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 2em;
+}
+
+/* иконка флага */
+.flag-icon {
+    width: 50px;
+    height: 30px;
+    justify-self: end;
+}
+
+/* поле ввода телефона */
+.telinput {
+    border: none;
+    width: 90%;
+}
+
+/* кнопка отправки телефона */
+.telbutton {
+    background-color: rgb(255, 200, 57);
+    color: #000000;
+    width: 120px;
+    height: 40px;
+
+    border: none;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5em;
+    color: #000000;
+}
+
+/* секция-галерея картинок */
+#gallery {
+    grid-row: 5/6;
+    grid-column: 1/12;
+
+    width: 100%;
+
+    /*display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 10%;*/
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /*grid-template-rows: 10% 1fr;*/
+    grid-gap: 1.5em;
+    padding: 5%;
+}
+
+/* заголовок секции-галерея картинок */
+#galh2 {
+    width: 50%;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2em;
+
+    grid-column: 1/5;
+
+}
+
+/* контейнер с картинками 
+#gal {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 15px;
+}*/
+
+.galphoto {
+    width: 193px;
+    height: 306px;
+}
+
+/* секция со статьей и тремя картинками справа */
+#collection {
+    grid-row: 6/7;
+    grid-column: 1/13;
+    width: 100%;
+    /*display: grid;
+    grid-template-columns: 1fr 60%;
+    grid-gap: 5%;*/
+}
+
+/* контейнер для статьи слева */
+#colarticle {
+    float: left;
+    box-sizing: border-box;
+    height: auto;
+    width: 50%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/* заголовок статьи */
+#colh2 {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2em;
+}
+
+/* текст статьи */
+.coltext {
+    color: rgb(96, 96, 96);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    line-height: 1.4em;
+}
+
+/* кнопка под статьей */
+.colbutton {
+    border: none;
+    background-color: rgb(255, 200, 57);
+    box-shadow: (0px 4px 22px rgba(0, 0, 0, 0.16));
+    width: 216px;
+    height: 40px;
+
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5em;
+}
+
+/* контейнер для трех фото справа */
+#colgallery {
+    height: 420px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+/* каждое фото в контейнере */
+.colphoto {
+    height: 420px;
+    margin: 1%;
+}
+
+/* блок со статьей и ссылками */
+#furniture {
+    grid-row: 7/8;
+    grid-column: 1/13;
+    clear: both;
+    margin-top: 5%;
+}
+
+/* контейнер с ссылками */
+.frnt {
+    width: 40%;
+    padding: 5%;
+    margin-top: 5%;
+    float: left;
+}
+
+/* цвет ссылок */
+.frnt a {
+    color: rgb(0, 0, 0);
+}
+
+/* контейнер для статьи справа */
+#furarticle {
+    width: 50%;
+    box-sizing: border-box;
+    padding-right: 5%;
+    float: right;
+}
+
+/* заголовок статьи */
+#furh2 {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2em;
+}
+
+/* текст статьи */
+.furtext {
+    color: rgb(96, 96, 96);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+}
+
+.furtext::first-line {
+    font-size: 1.5em;
+}
+
+#footer {
+    background-color: rgb(9, 58, 122);
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+
+    grid-row: 8/9;
+    grid-column: 1/13;
+}
+
+#navfooter {
+    width: 80%;
+    height: 50px;
+    margin: 0 10%;
+
+
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.9em;
+    color: rgb(202, 202, 202);
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cities {
+    margin: 0 10%;
+}
+
+#footh3 {
+    font-family: Nunito, sans-serif;
+    ;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2em;
+}
+
+.country {
+    color: rgb(229, 229, 229);
+    font-weight: 400;
+    font-size: 1.3em;
+}
+
+.city {
+    margin: 0 2% 0 0;
+}
+
+#contacts {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr;
+    justify-content: center;
+    margin: 2% 0 0 10%;
+}
+
+.address {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.7em;
+}
+
+.adr {
+    margin: 11px 0;
+}
+
+.app {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.gpl {
+    max-width: 100%;
+    margin-bottom: 5%;
+}
+
+.aps {
+    max-width: 100%;
+    margin-bottom: 5%;
 }

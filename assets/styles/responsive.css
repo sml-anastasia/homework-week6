@@ -1,0 +1,77 @@
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 10vh 70vh min-content;
+    grid-template-areas:
+        "hd hd hd hd hd hd"
+        "mn mn mn mn as as"
+        "ft ft ft ft ft ft";
+    text-align: center;
+}
+
+.hd {
+    height: 100%;
+    width: 100%;
+    grid-area: hd;
+    background-color: wheat;
+}
+
+.mn {
+    height: 100%;
+    grid-area: mn;
+    background-color: cadetblue;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 40% 25% 25%;
+    grid-template-areas:
+        "mntext mntext"
+        ". ."
+        "el1 el2"
+        "el3 el3";
+}
+
+.as {
+    height: 100%;
+    grid-area: as;
+    background-color: orange;
+}
+
+.ft {
+    height: 100%;
+    width: 100%;
+    grid-area: ft;
+    background-color: coral;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.mntext {
+    width: 100%;
+    grid-area: mntext;
+}
+
+.el {
+    background-color: orangered;
+    margin: 5px;
+}
+
+.el1 {
+    grid-area: el1;
+}
+
+.el2 {
+    grid-area: el2;
+}
+
+.el3 {
+    grid-area: el3;
+}
+
+.f {
+    margin: 10px;
+    background-color: wheat;
+    height: 20vh;
+}
