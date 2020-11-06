@@ -1,17 +1,24 @@
-/* настройки для всего документа: цвет текста, шрифт, ширина */
+/* настройки для всего документа: шрифт */
 html {
     font-family: Nunito, sans-serif;
-    width: 100%;
 }
 
-/* настройки тела документа, грид-контейнер из 12 колонок и _____ строк */
+/* настройки тела документа, грид-контейнер из 12 колонок и 8 строк */
 body {
     width: 100%;
-    height: auto;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(auto-fit(8, max-content));
     grid-row-gap: 2rem;
+    grid-template-areas:
+        "main"
+        "examples"
+        "features"
+        "telephone"
+        "gallery"
+        "collection"
+        "furniture"
+        "footer";
 }
 
 /* настройки всех ссылок: белые, без оформления */
@@ -20,21 +27,1093 @@ a {
     text-decoration: none;
 }
 
-/* основной блок, грид-элемент, грид-контейнер из 12 колонок для хедера, заголовка, интро и поля поиска */
-#main {
-    /*background-image: url("assets/images/mainphoto.png");*/
-    background: linear-gradient(0.87deg, rgba(2, 55, 135, 0.9) 0.69%, rgba(81, 38, 174, 0.4736) 100.48%, rgba(38, 92, 174, 0.0102906) 100.49%, rgba(195, 195, 196, 0.00520833) 100.5%, #76A6EF 100.51%);
+/* медиа-запросы для разных категорий ширин */
 
-    color: rgb(255, 255, 255);
+/* phones */
+@media (max-width: 320px) {
+    #main {
+        background: linear-gradient(0.87deg, rgba(2, 55, 135, 0.9) 0.69%, rgba(81, 38, 174, 0.4736) 100.48%, rgba(38, 92, 174, 0.0102906) 100.49%, rgba(195, 195, 196, 0.00520833) 100.5%, #76A6EF 100.51%);
 
-    height: 865px;
-    width: 100%;
-    grid-row: 1/2;
-    grid-column: 1/13;
+        color: rgb(255, 255, 255);
 
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+        height: min-content;
+        width: 100%;
+        padding-bottom: 10%;
+        grid-area: main;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr) 10% 1fr;
+        grid-gap: 1rem;
+    }
+
+    /* хедер, грид-элемент, грид-контейнер для лого и меню */
+    #header {
+        grid-row: 1/2;
+        grid-column: 1/2;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+    }
+
+    /* логотип, грид-элемент */
+    #logo {
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+    #navheader {
+        grid-row: 2/3;
+        grid-column: 1/2;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit(4, 200px));
+        grid-template-rows: 1fr;
+        grid-gap: 2rem;
+        text-align: center;
+
+        font-family: Nunito, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.6rem;
+    }
+
+    /* настройки заголовка основного блока */
+    #h1 {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 3.5rem;
+        grid-row: 2/3;
+        grid-column: 1/2;
+        text-align: center;
+    }
+
+    /* настройки текста-введения */
+    #intro {
+        height: max-content;
+        width: 100%;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+        grid-row: 3/4;
+        grid-column: 1/2;
+        text-align: center;
+    }
+
+    /* поле поиска, грид-элемент, грид-контейнер */
+    #searchfield {
+        background: white;
+        grid-row: 4/5;
+        grid-column: 1/2;
+
+        width: 50%;
+        height: 100%;
+        padding: 10px;
+        justify-self: center;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr);
+        grid-gap: 1rem;
+    }
+
+    /* здесь по идее должны быть формы */
+    .sf {
+        background-color: rgba(255, 200, 57, 0.5);
+    }
+
+    .sf1 {
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+    .sf2 {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    .sf3 {
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+
+    .sf4 {
+        grid-row: 4/5;
+        grid-column: 1/2;
+    }
+
+    .sf5 {
+        grid-row: 5/6;
+        grid-column: 1/2;
+    }
+
+    .sf6 {
+        grid-row: 6/7;
+        grid-column: 1/2;
+    }
+
+    /* кнопка поиска */
+    .sfbutton {
+        background-color: rgb(255, 200, 57);
+
+        grid-row: 7/8;
+        grid-column: 1/2;
+
+        border: none;
+        /*border-radius: 10px;*/
+
+        font-family: Nunito, sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 1rem;
+    }
+
+    /* первый раздел с тремя фото, грид-элемент; флекс для выравнивания по центру */
+    #examples {
+        /*background-color: burlywood;*/
+
+        height: min-content;
+        width: 100%;
+
+        grid-area: examples;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        justify-content: center;
+    }
+
+    /* блок с фотографиями и текстовыми прямоугольниками, флекс-контейнер */
+    #photos {
+        margin: auto;
+
+        width: 80%;
+        height: max-content;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25vh, 1fr));
+        grid-template-rows: 1fr;
+    }
+
+    /* размеры фото */
+    .photo {
+        width: 95%;
+        object-fit: cover;
+    }
+
+    .photo img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* блок под фото */
+    .expl {
+        color: #000000;
+
+        height: 15vh;
+        width: 100%;
+
+        box-shadow: 0px 4px 35px rgba(196, 143, 7, 0.49);
+
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 1fr;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .arrow {
+        background-color: rgb(255, 200, 57);
+
+        grid-column: 1/2;
+        width: 40%;
+        height: 40%;
+        margin-left: 15%;
+        border-radius: 50%;
+    }
+
+    .arrow span {
+        height: 100%;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 1rem;
+        padding: auto;
+    }
+}
+
+/* portrait phones */
+@media (min-width: 321px) and (max-width: 480px) {
+    #main {
+        background: linear-gradient(0.87deg, rgba(2, 55, 135, 0.9) 0.69%, rgba(81, 38, 174, 0.4736) 100.48%, rgba(38, 92, 174, 0.0102906) 100.49%, rgba(195, 195, 196, 0.00520833) 100.5%, #76A6EF 100.51%);
+
+        color: rgb(255, 255, 255);
+
+        height: min-content;
+        width: 100%;
+        padding-bottom: 10%;
+        grid-area: main;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr) 10% 1.5fr;
+    }
+
+    /* хедер, грид-элемент, грид-контейнер для лого и меню */
+    #header {
+        grid-row: 1/2;
+        grid-column: 1/2;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+    }
+
+    /* логотип, грид-элемент */
+    #logo {
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+    #navheader {
+        grid-row: 2/3;
+        grid-column: 1/2;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit(4, 200px));
+        grid-template-rows: 1fr;
+        grid-gap: 2rem;
+        text-align: center;
+
+        font-family: Nunito, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.6rem;
+    }
+
+    /* настройки заголовка основного блока */
+    #h1 {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 3.5rem;
+        grid-row: 2/3;
+        grid-column: 1/2;
+        text-align: center;
+    }
+
+    /* настройки текста-введения */
+    #intro {
+        height: max-content;
+        width: 100%;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+        grid-row: 3/4;
+        grid-column: 1/2;
+        text-align: center;
+    }
+
+    /* поле поиска, грид-элемент, грид-контейнер */
+    #searchfield {
+        background: white;
+        grid-row: 4/5;
+        grid-column: 1/2;
+
+        width: 50%;
+        height: 100%;
+        padding: 10px;
+        justify-self: center;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr);
+        grid-gap: 1rem;
+    }
+
+    /* здесь по идее должны быть формы */
+    .sf {
+        background-color: rgba(255, 200, 57, 0.5);
+    }
+
+    .sf1 {
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+    .sf2 {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    .sf3 {
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+
+    .sf4 {
+        grid-row: 4/5;
+        grid-column: 1/2;
+    }
+
+    .sf5 {
+        grid-row: 5/6;
+        grid-column: 1/2;
+    }
+
+    .sf6 {
+        grid-row: 6/7;
+        grid-column: 1/2;
+    }
+
+    /* кнопка поиска */
+    .sfbutton {
+        background-color: rgb(255, 200, 57);
+
+        grid-row: 7/8;
+        grid-column: 1/2;
+
+        border: none;
+        /*border-radius: 10px;*/
+
+        font-family: Nunito, sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 1rem;
+    }
+
+    /* первый раздел с тремя фото, грид-элемент; флекс для выравнивания по центру */
+    #examples {
+        /*background-color: burlywood;*/
+
+        height: min-content;
+        width: 100%;
+
+        grid-area: examples;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        justify-content: center;
+    }
+
+    /* блок с фотографиями и текстовыми прямоугольниками, флекс-контейнер */
+    #photos {
+        margin: auto;
+
+        width: 80%;
+        height: max-content;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25vh, 1fr));
+        grid-template-rows: 1fr;
+    }
+
+    /* размеры фото */
+    .photo {
+        width: 95%;
+        object-fit: cover;
+    }
+
+    .photo img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* блок под фото */
+    .expl {
+        color: #000000;
+
+        height: 15vh;
+        width: 100%;
+
+        box-shadow: 0px 4px 35px rgba(196, 143, 7, 0.49);
+
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 1fr;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .arrow {
+        background-color: rgb(255, 200, 57);
+
+        grid-column: 1/2;
+        width: 40%;
+        height: 40%;
+        margin-left: 15%;
+        border-radius: 50%;
+    }
+
+    .arrow span {
+        height: 100%;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 1rem;
+        padding: auto;
+    }
+}
+
+/* landscape phones and tablets */
+@media (orientation: landscape),
+(min-width: 481px) and (max-width: 760px) {
+    #main {
+        background: linear-gradient(0.87deg, rgba(2, 55, 135, 0.9) 0.69%, rgba(81, 38, 174, 0.4736) 100.48%, rgba(38, 92, 174, 0.0102906) 100.49%, rgba(195, 195, 196, 0.00520833) 100.5%, #76A6EF 100.51%);
+
+        color: rgb(255, 255, 255);
+
+        height: min-content;
+        width: 100%;
+        grid-area: main;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr) 10% 1.5fr;
+    }
+
+    /* хедер, грид-элемент, грид-контейнер для лого и меню */
+    #header {
+        grid-row: 1/2;
+        grid-column: 1/3;
+
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 1fr;
+        justify-items: center;
+        align-items: center;
+    }
+
+    /* логотип, грид-элемент */
+    #logo {
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+    /* меню хедера, грид-элемент, гри-контейнер для ссылок */
+    #navheader {
+        grid-row: 1/2;
+        grid-column: 2/3;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit(4, 200px));
+        grid-template-rows: 1fr;
+        grid-gap: 2rem;
+        text-align: center;
+
+        font-family: Nunito, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.1rem;
+    }
+
+
+    /* настройки заголовка основного блока */
+    #h1 {
+        width: 60%;
+        margin-left: 5%;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 3.5rem;
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    /* настройки текста-введения */
+    #intro {
+        height: max-content;
+        width: 100%;
+        margin-left: 5%;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+
+    /* поле поиска, грид-элемент, грид-контейнер */
+    #searchfield {
+        background: white;
+        grid-row: 4/5;
+        grid-column: 1/2;
+
+        width: 80%;
+        padding: 10px;
+        margin-bottom: 5%;
+        justify-self: center;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-gap: 1rem;
+    }
+
+    /* здесь по идее должны быть формы */
+    .sf {
+        background-color: rgba(255, 200, 57, 0.5);
+    }
+
+    .sf1 {
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+    .sf2 {
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+
+    .sf3 {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    .sf4 {
+        grid-row: 2/3;
+        grid-column: 2/3;
+    }
+
+    .sf5 {
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+
+    .sf6 {
+        grid-row: 3/4;
+        grid-column: 2/3;
+    }
+
+    /* кнопка поиска */
+    .sfbutton {
+        background-color: rgb(255, 200, 57);
+
+        grid-row: 4/5;
+        grid-column: 1/3;
+
+        border: none;
+        /*border-radius: 10px;*/
+
+        font-family: Nunito, sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 1rem;
+    }
+
+    /* первый раздел с тремя фото, грид-элемент; флекс для выравнивания по центру */
+    #examples {
+        height: min-content;
+        width: 100%;
+
+        grid-area: examples;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        justify-content: center;
+    }
+
+    /* блок с фотографиями и текстовыми прямоугольниками, флекс-контейнер */
+    #photos {
+        margin: auto;
+
+        width: 80%;
+        height: max-content;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25vh, 1fr));
+        grid-template-rows: 1fr;
+    }
+
+    /* размеры фото */
+    .photo {
+        width: 95%;
+        object-fit: cover;
+    }
+
+    .photo img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* блок под фото */
+    .expl {
+        color: #000000;
+
+        height: 15vh;
+        width: 100%;
+
+        box-shadow: 0px 4px 35px rgba(196, 143, 7, 0.49);
+
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 1fr;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .arrow {
+        background-color: rgb(255, 200, 57);
+
+        grid-column: 1/2;
+        width: 40%;
+        height: 40%;
+        margin-left: 15%;
+        border-radius: 50%;
+    }
+
+    .arrow span {
+        height: 100%;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 1rem;
+        padding: auto;
+    }
+}
+
+/* tablets, medium desktops */
+@media (min-width: 761px) and (max-width: 1200px) {
+    #main {
+        background: linear-gradient(0.87deg, rgba(2, 55, 135, 0.9) 0.69%, rgba(81, 38, 174, 0.4736) 100.48%, rgba(38, 92, 174, 0.0102906) 100.49%, rgba(195, 195, 196, 0.00520833) 100.5%, #76A6EF 100.51%);
+
+        color: rgb(255, 255, 255);
+
+        height: min-content;
+        width: 100%;
+        grid-area: main;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr) 10% 1.5fr;
+    }
+
+    /* хедер, грид-элемент, грид-контейнер для лого и меню */
+    #header {
+        grid-row: 1/2;
+        grid-column: 1/3;
+
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 1fr;
+        justify-items: center;
+        align-items: center;
+    }
+
+    /* логотип, грид-элемент */
+    #logo {
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+    /* меню хедера, грид-элемент, гри-контейнер для ссылок */
+    #navheader {
+        grid-row: 1/2;
+        grid-column: 2/3;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit(4, 200px));
+        grid-template-rows: 1fr;
+        grid-gap: 2rem;
+        text-align: center;
+
+        font-family: Nunito, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.1rem;
+    }
+
+
+    /* настройки заголовка основного блока */
+    #h1 {
+        width: 60%;
+        margin-left: 5%;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 3.5rem;
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    /* настройки текста-введения */
+    #intro {
+        height: max-content;
+        width: 100%;
+        margin-left: 5%;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+
+    /* поле поиска, грид-элемент, грид-контейнер */
+    #searchfield {
+        background: white;
+        grid-row: 4/5;
+        grid-column: 1/2;
+
+        width: 70%;
+        padding: 10px;
+        margin-bottom: 5%;
+        justify-self: center;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-gap: 1rem;
+    }
+
+    /* здесь по идее должны быть формы */
+    .sf {
+        background-color: rgba(255, 200, 57, 0.5);
+    }
+
+    .sf1 {
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+    .sf2 {
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+
+    .sf3 {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    .sf4 {
+        grid-row: 2/3;
+        grid-column: 2/3;
+    }
+
+    .sf5 {
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+
+    .sf6 {
+        grid-row: 3/4;
+        grid-column: 2/3;
+    }
+
+    /* кнопка поиска */
+    .sfbutton {
+        background-color: rgb(255, 200, 57);
+
+        grid-row: 4/5;
+        grid-column: 1/3;
+
+        border: none;
+        /*border-radius: 10px;*/
+
+        font-family: Nunito, sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 1rem;
+    }
+
+    /* первый раздел с тремя фото, грид-элемент; флекс для выравнивания по центру */
+    #examples {
+        /*background-color: burlywood;*/
+
+        height: min-content;
+        width: 100%;
+
+        grid-area: examples;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        justify-content: center;
+    }
+
+    /* блок с фотографиями и текстовыми прямоугольниками, флекс-контейнер */
+    #photos {
+        margin: auto;
+
+        width: 80%;
+        height: max-content;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25vh, 1fr));
+        grid-template-rows: 1fr;
+    }
+
+    /* размеры фото */
+    .photo {
+        width: 95%;
+        object-fit: cover;
+    }
+
+    .photo img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* блок под фото */
+    .expl {
+        color: #000000;
+
+        height: 15vh;
+        width: 100%;
+
+        box-shadow: 0px 4px 35px rgba(196, 143, 7, 0.49);
+
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 1fr;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .arrow {
+        background-color: rgb(255, 200, 57);
+
+        grid-column: 1/2;
+        width: 40%;
+        height: 40%;
+        margin-left: 15%;
+        border-radius: 50%;
+    }
+
+    .arrow span {
+        height: 100%;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 1rem;
+        padding: auto;
+    }
+}
+
+/* large desktops and laptops */
+@media (min-width: 1201px) {
+
+    /* основной блок, грид-элемент, грид-контейнер из 12 колонок для хедера, заголовка, интро и поля поиска */
+    #main {
+        background: linear-gradient(0.87deg, rgba(2, 55, 135, 0.9) 0.69%, rgba(81, 38, 174, 0.4736) 100.48%, rgba(38, 92, 174, 0.0102906) 100.49%, rgba(195, 195, 196, 0.00520833) 100.5%, #76A6EF 100.51%);
+
+        color: rgb(255, 255, 255);
+
+        height: min-content;
+        width: 100%;
+        grid-area: main;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+    }
+
+    /* хедер, грид-элемент, грид-контейнер для лого и меню */
+    #header {
+        grid-row: 1/2;
+        grid-column: 1/3;
+
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 1fr;
+        justify-items: center;
+        align-items: center;
+    }
+
+    /* логотип, грид-элемент */
+    #logo {
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+    /* меню хедера, грид-элемент, гри-контейнер для ссылок */
+    #navheader {
+        grid-row: 1/2;
+        grid-column: 2/3;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit(4, 200px));
+        grid-template-rows: 1fr;
+        grid-gap: 2rem;
+        text-align: center;
+
+        font-family: Nunito, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.1rem;
+    }
+
+
+    /* настройки заголовка основного блока */
+    #h1 {
+        width: 60%;
+        margin-left: 5%;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 3.5rem;
+        grid-row: 3/5;
+        grid-column: 1/3;
+    }
+
+    /* настройки текста-введения */
+    #intro {
+        height: max-content;
+        width: 100%;
+        margin-left: 5%;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+        grid-row: 5/7;
+        grid-column: 1/3;
+    }
+
+    /* поле поиска, грид-элемент, грид-контейнер */
+    #searchfield {
+        background: white;
+        grid-row: 7/9;
+        grid-column: 1/3;
+
+        width: 80%;
+        padding: 10px;
+        margin: 0 5%;
+
+        display: grid;
+        grid-template-columns: 5% repeat(5, 1fr) 5%;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 1rem;
+    }
+
+    /* здесь по идее должны быть формы */
+    .sf {
+        background-color: rgba(255, 200, 57, 0.5);
+    }
+
+    .sf1 {
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+
+    .sf2 {
+        grid-row: 1/2;
+        grid-column: 3/7;
+    }
+
+    .sf3 {
+        grid-row: 2/3;
+        grid-column: 2/3;
+    }
+
+    .sf4 {
+        grid-row: 2/3;
+        grid-column: 3/4;
+    }
+
+    .sf5 {
+        grid-row: 2/3;
+        grid-column: 4/5;
+    }
+
+    .sf6 {
+        grid-row: 2/3;
+        grid-column: 5/6;
+    }
+
+    /* кнопка поиска */
+    .sfbutton {
+        background-color: rgb(255, 200, 57);
+
+        grid-row: 2/3;
+        grid-column: 6/7;
+
+        border: none;
+        /*border-radius: 10px;*/
+
+        font-family: Nunito, sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 1rem;
+    }
+
+    /* первый раздел с тремя фото, грид-элемент; флекс для выравнивания по центру */
+    #examples {
+        /*background-color: burlywood;*/
+
+        height: min-content;
+        width: 100%;
+
+        grid-area: examples;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        justify-content: center;
+    }
+
+    /* блок с фотографиями и текстовыми прямоугольниками, грид-контейнер */
+    #photos {
+        margin: auto;
+
+        width: 80%;
+        height: max-content;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25vh, 1fr));
+        grid-template-rows: 1fr;
+    }
+
+    /* размеры фото */
+    .photo {
+        width: 95%;
+        object-fit: cover;
+    }
+
+    .photo img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* блок под фото */
+    .expl {
+        color: #000000;
+
+        height: 15vh;
+        width: 100%;
+
+        box-shadow: 0px 4px 35px rgba(196, 143, 7, 0.49);
+
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 1fr;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .arrow {
+        background-color: rgb(255, 200, 57);
+
+        grid-column: 1/2;
+        width: 40%;
+        height: 40%;
+        margin-left: 15%;
+        border-radius: 50%;
+    }
+
+    .arrow span {
+        height: 100%;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 1rem;
+        padding: auto;
+    }
 }
 
 /*#background {
@@ -44,42 +1123,7 @@ a {
     width: 100%;
 }*/
 
-/* хедер, грид-элемент, грид-контейнер для лого и меню */
-#header {
-    grid-row: 2/3;
-    grid-column: 2/12;
-
-    display: grid;
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 1fr;
-    justify-items: center;
-    align-items: center;
-}
-
-/* логотип, грид-элемент */
-#logo {
-    grid-row: 1/2;
-    grid-column: 1/2;
-}
-
-/* меню хедера, грид-элемент, гри-контейнер для ссылок */
-#navheader {
-    grid-row: 1/2;
-    grid-column: 2/3;
-
-    display: grid;
-    grid-template-columns: repeat(auto-fit(4, 200px));
-    grid-template-rows: 1fr;
-    grid-gap: 2rem;
-    text-align: center;
-
-    font-family: Nunito, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 18px;
-}
-
-/* ссылки меню, грид-элементы */
+/* ссылки меню, грид-элементы, на всех дисплеях одинаково */
 .nav1 {
     grid-row: 1/2;
     grid-column: 1/2;
@@ -102,162 +1146,22 @@ a {
     grid-column: 4/5;
 }
 
-/* настройки заголовка основного блока */
-#h1 {
-    font-weight: 700;
-    font-style: normal;
-    font-size: 60px;
-    grid-row: 4/6;
-    grid-column: 2/9;
-}
+/*  
+@media (max-width: 320px) {
+@media (min-width: 321px) and (max-width: 480px) {}
+@media (orientation: landscape),
+(min-width: 481px) and (max-width: 760px) {}
+@media (min-width: 761px) and (max-width: 1200px) {}
+@media (min-width: 1201px) {}*/
 
-/* настройки текста-введения */
-#intro {
-    font-weight: 400;
-    font-style: normal;
-    font-size: 29px;
-    line-height: 39, 56px;
-    grid-row: 7/9;
-    grid-column: 2/9;
-}
 
-/* поле поиска, грид-элемент, грид-контейнер */
-#searchfield {
-    background: white;
-    grid-row: 10/12;
-    grid-column: 2/12;
-
-    width: auto;
-    padding: 10px;
-
-    display: grid;
-    grid-template-columns: 5% repeat(5, 1fr) 5%;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 1rem;
-}
-
-/* здесь по идее должны быть формы */
-.sf {
-    background-color: rgba(255, 200, 57, 0.5);
-}
-
-.sf1 {
-    grid-row: 1/2;
-    grid-column: 2/3;
-}
-
-.sf2 {
-    grid-row: 1/2;
-    grid-column: 3/7;
-}
-
-.sf3 {
-    grid-row: 2/3;
-    grid-column: 2/3;
-}
-
-.sf4 {
-    grid-row: 2/3;
-    grid-column: 3/4;
-}
-
-.sf5 {
-    grid-row: 2/3;
-    grid-column: 4/5;
-}
-
-.sf6 {
-    grid-row: 2/3;
-    grid-column: 5/6;
-}
-
-/* кнопка поиска */
-.sfbutton {
-    background-color: rgb(255, 200, 57);
-
-    grid-row: 2/3;
-    grid-column: 6/7;
-
-    border: none;
-    /*border-radius: 10px;*/
-
-    font-family: Nunito, sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 1rem;
-}
-
-/* первый раздел с тремя фото, грид-элемент; флекс для выравнивания по центру */
-#examples {
-    /*background-color: burlywood;*/
-
-    height: 700px;
-    width: 100%;
-
-    grid-row: 2/3;
-    grid-column: 1/13;
-
-    display: flex;
-}
-
-/* блок с фотографиями и текстовыми прямоугольниками, флекс-контейнер */
-#photos {
-    margin: auto;
-
-    width: 1000px;
-    height: 500px;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-}
-
-/* размеры фото */
-.photo {
-    width: 320px;
-    height: 400px;
-}
-
-/* блок под фото */
-.expl {
-    color: #000000;
-
-    height: 100px;
-    width: 320px;
-
-    box-shadow: 0px 4px 35px rgba(196, 143, 7, 0.49);
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.arrow {
-    background-color: rgb(255, 200, 57);
-    color: rgb(0, 0, 0);
-
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-
-    font-weight: bold;
-    font-size: 1.5rem;
-    line-height: 40px;
-    text-align: center;
-
-    margin: 1em;
-}
 
 /* текст внутри блока */
 .expltext {
     font-family: Nunito, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 1em;
+    font-size: 1rem;
 }
 
 /* появление цвета при наведении на блок */
@@ -272,8 +1176,7 @@ a {
 /* третий блок, грид-элемент, грид-контейнер для преимуществ, иконок, фото и цветного прямоугольника */
 #features {
     /*background-color: darkkhaki;*/
-    grid-row: 3/4;
-    grid-column: 1/13;
+    grid-area: features;
 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -385,8 +1288,7 @@ a {
 
 /* секция для отправки телефона */
 #telephone {
-    grid-row: 4/5;
-    grid-column: 1/13;
+    grid-area: telephone;
 
     display: grid;
     grid-template-columns: 1fr 90% 1fr;
@@ -464,8 +1366,7 @@ a {
 
 /* секция-галерея картинок */
 #gallery {
-    grid-row: 5/6;
-    grid-column: 1/12;
+    grid-area: gallery;
 
     width: 100%;
 
@@ -509,9 +1410,10 @@ a {
 
 /* секция со статьей и тремя картинками справа */
 #collection {
-    grid-row: 6/7;
-    grid-column: 1/13;
+    grid-area: collection;
+
     width: 100%;
+
     /*display: grid;
     grid-template-columns: 1fr 60%;
     grid-gap: 5%;*/
@@ -574,8 +1476,8 @@ a {
 
 /* блок со статьей и ссылками */
 #furniture {
-    grid-row: 7/8;
-    grid-column: 1/13;
+    grid-area: furniture;
+
     clear: both;
     margin-top: 5%;
 }
@@ -626,8 +1528,7 @@ a {
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
 
-    grid-row: 8/9;
-    grid-column: 1/13;
+    grid-area: footer;
 }
 
 #navfooter {

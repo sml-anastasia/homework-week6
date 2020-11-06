@@ -1,0 +1,35 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(2, 100px);
+}
+
+.el {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.el1 {
+    background-color: gold;
+}
+
+.el2 {
+    background-color: paleturquoise;
+}
+
+.el3 {
+    background-color: lightsalmon;
+}
+
+.el4 {
+    background-color: lightgreen;
+}
+
+.el5 {
+    background-color: pink;
+}
+
+.el6 {
+    background-color: plum;
+}
