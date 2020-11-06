@@ -30,7 +30,7 @@ a {
 /* медиа-запросы для разных категорий ширин */
 
 /* phones */
-@media (max-width: 320px) {
+@media (max-width: 319px) {
     #main {
         background: linear-gradient(0.87deg, rgba(2, 55, 135, 0.9) 0.69%, rgba(81, 38, 174, 0.4736) 100.48%, rgba(38, 92, 174, 0.0102906) 100.49%, rgba(195, 195, 196, 0.00520833) 100.5%, #76A6EF 100.51%);
 
@@ -230,6 +230,14 @@ a {
         align-items: center;
     }
 
+    /* текст внутри блока */
+    .expltext {
+        font-family: Nunito, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.8rem;
+    }
+
     .arrow {
         background-color: rgb(255, 200, 57);
 
@@ -247,10 +255,114 @@ a {
         font-size: 1rem;
         padding: auto;
     }
+
+    /* третий блок, грид-элемент, грид-контейнер для преимуществ, иконок, фото и цветного прямоугольника */
+    #features {
+        /*background-color: darkkhaki;*/
+        width: 100%;
+        margin-top: 5%;
+        grid-area: features;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 90%;
+
+        grid-gap: 4rem;
+    }
+
+    /* заголовок второго блока */
+    #fh2 {
+        padding-left: 10%;
+        grid-row: 1/2;
+        grid-column: 1/2;
+        font-size: 2rem;
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+        justify-self: center;
+    }
+
+    /* контейнер для строк преимуществ и иконок */
+    #ftr {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        padding-left: 30%;
+
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 30vh 30vh 30vh;
+
+        width: 100%;
+        justify-self: center;
+    }
+
+    /* все текстовые блоки-преимущества */
+    .f {
+        width: 100%;
+        color: rgb(0, 0, 0);
+
+        grid-column: 2/3;
+
+        font-size: 1rem;
+    }
+
+    .f::first-line {
+        font-size: 1.8rem;
+    }
+
+    .f1 {
+        grid-row: 1/2;
+    }
+
+    .f2 {
+        grid-row: 2/3;
+    }
+
+    .f3 {
+        grid-row: 3/4;
+    }
+
+    .icon {
+        grid-column: 1/2;
+    }
+
+    /* контейнер для фото и прямоугольника */
+    #ftrphoto {
+        display: none;
+    }
+
+    /* секция со статьей и тремя картинками справа */
+    #collection {
+        grid-area: collection;
+        width: 100%;
+        height: max-content;
+    }
+
+    /* контейнер для статьи слева */
+    #colarticle {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        text-align: center;
+    }
+
+    #colarticle .coltext {
+        font-size: 2rem;
+    }
+
+    #colh2 {
+        font-size: 5rem;
+    }
+
+    #colgallery {
+        display: none;
+    }
+
 }
 
 /* portrait phones */
-@media (min-width: 321px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 479px) {
     #main {
         background: linear-gradient(0.87deg, rgba(2, 55, 135, 0.9) 0.69%, rgba(81, 38, 174, 0.4736) 100.48%, rgba(38, 92, 174, 0.0102906) 100.49%, rgba(195, 195, 196, 0.00520833) 100.5%, #76A6EF 100.51%);
 
@@ -449,6 +561,15 @@ a {
         align-items: center;
     }
 
+    /* текст внутри блока */
+    .expltext {
+        font-family: Nunito, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.7rem;
+    }
+
+
     .arrow {
         background-color: rgb(255, 200, 57);
 
@@ -466,11 +587,105 @@ a {
         font-size: 1rem;
         padding: auto;
     }
+
+    /* третий блок, грид-элемент, грид-контейнер для преимуществ, иконок, фото и цветного прямоугольника */
+    #features {
+        /*background-color: darkkhaki;*/
+        width: 100%;
+        grid-area: features;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 90%;
+
+        grid-gap: 4rem;
+    }
+
+    /* заголовок второго блока */
+    #fh2 {
+        padding-left: 10%;
+        grid-row: 1/2;
+        grid-column: 1/2;
+        font-size: 2rem;
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+        justify-self: center;
+    }
+
+    /* контейнер для строк преимуществ и иконок */
+    #ftr {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        padding-left: 30%;
+
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 30vh 30vh 30vh;
+
+        width: 100%;
+        justify-self: center;
+    }
+
+    /* все текстовые блоки-преимущества */
+    .f {
+        width: 100%;
+        color: rgb(0, 0, 0);
+
+        grid-column: 2/3;
+
+        font-size: 1rem;
+    }
+
+    .f::first-line {
+        font-size: 1.8rem;
+    }
+
+    .f1 {
+        grid-row: 1/2;
+    }
+
+    .f2 {
+        grid-row: 2/3;
+    }
+
+    .f3 {
+        grid-row: 3/4;
+    }
+
+    .icon {
+        grid-column: 1/2;
+    }
+
+    /* контейнер для фото и прямоугольника */
+    #ftrphoto {
+        display: none;
+    }
+
+    /* секция со статьей и тремя картинками справа */
+    #collection {
+        grid-area: collection;
+        width: 100%;
+        height: max-content;
+    }
+
+    /* контейнер для статьи слева */
+    #colarticle {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        text-align: center;
+    }
+
+    #colgallery {
+        display: none;
+    }
 }
 
 /* landscape phones and tablets */
 @media (orientation: landscape),
-(min-width: 481px) and (max-width: 760px) {
+(min-width: 480px) and (max-width: 759px) {
     #main {
         background: linear-gradient(0.87deg, rgba(2, 55, 135, 0.9) 0.69%, rgba(81, 38, 174, 0.4736) 100.48%, rgba(38, 92, 174, 0.0102906) 100.49%, rgba(195, 195, 196, 0.00520833) 100.5%, #76A6EF 100.51%);
 
@@ -664,6 +879,15 @@ a {
         align-items: center;
     }
 
+    /* текст внутри блока */
+    .expltext {
+        font-family: Nunito, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.8rem;
+    }
+
+
     .arrow {
         background-color: rgb(255, 200, 57);
 
@@ -681,10 +905,122 @@ a {
         font-size: 1rem;
         padding: auto;
     }
+
+    /* третий блок, грид-элемент, грид-контейнер для преимуществ, иконок, фото и цветного прямоугольника */
+    #features {
+        /*background-color: darkkhaki;*/
+        grid-area: features;
+
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 10% 90%;
+        grid-gap: 3rem;
+    }
+
+    /* заголовок второго блока */
+    #fh2 {
+        padding-left: 10%;
+        grid-row: 1/2;
+        grid-column: 1/2;
+        font-size: 2rem;
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+    }
+
+    /* контейнер для строк преимуществ и иконок */
+    #ftr {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        padding-left: 10%;
+
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 30vh 30vh 30vh;
+    }
+
+    /* все текстовые блоки-преимущества */
+    .f {
+        width: 100%;
+        color: rgb(0, 0, 0);
+
+        grid-column: 2/3;
+
+        font-size: 1rem;
+    }
+
+    .f::first-line {
+        font-size: 1.8rem;
+    }
+
+    .f1 {
+        grid-row: 1/2;
+    }
+
+    .f2 {
+        grid-row: 2/3;
+    }
+
+    .f3 {
+        grid-row: 3/4;
+    }
+
+    .icon {
+        grid-column: 1/2;
+    }
+
+    /* контейнер для фото и прямоугольника */
+    #ftrphoto {
+        grid-row: 2/3;
+        grid-column: 2/3;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    /* фото справа */
+    .fphoto {
+        height: 377px;
+        width: auto;
+
+        grid-row: 1/2;
+        grid-column: 1/2;
+
+        margin-left: 5%;
+    }
+
+    /* цветной прямоугольник */
+    .frectangle {
+        background-color: rgb(255, 200, 57);
+
+        height: 277px;
+        width: 221px;
+        grid-row: 1/2;
+        grid-column: 1/2;
+        z-index: -1;
+        align-self: flex-start;
+        margin-top: 10%;
+    }
+
+    /* секция со статьей и тремя картинками справа */
+    #collection {
+        grid-area: collection;
+        width: 100%;
+    }
+
+    /* контейнер для статьи слева */
+    #colarticle {
+        float: left;
+        box-sizing: border-box;
+        height: auto;
+        width: 50%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
 }
 
 /* tablets, medium desktops */
-@media (min-width: 761px) and (max-width: 1200px) {
+@media (min-width: 760px) and (max-width: 1199px) {
     #main {
         background: linear-gradient(0.87deg, rgba(2, 55, 135, 0.9) 0.69%, rgba(81, 38, 174, 0.4736) 100.48%, rgba(38, 92, 174, 0.0102906) 100.49%, rgba(195, 195, 196, 0.00520833) 100.5%, #76A6EF 100.51%);
 
@@ -880,6 +1216,14 @@ a {
         align-items: center;
     }
 
+    /* текст внутри блока */
+    .expltext {
+        font-family: Nunito, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 0.9rem;
+    }
+
     .arrow {
         background-color: rgb(255, 200, 57);
 
@@ -897,10 +1241,134 @@ a {
         font-size: 1rem;
         padding: auto;
     }
+
+    /* третий блок, грид-элемент, грид-контейнер для преимуществ, иконок, фото и цветного прямоугольника */
+    #features {
+        /*background-color: darkkhaki;*/
+        grid-area: features;
+
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 10% 90%;
+        grid-gap: 3rem;
+    }
+
+    /* заголовок второго блока */
+    #fh2 {
+        padding-left: 10%;
+        grid-row: 1/2;
+        grid-column: 1/2;
+        font-size: 2rem;
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+    }
+
+    /* контейнер для строк преимуществ и иконок */
+    #ftr {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        padding-left: 10%;
+
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 30vh 30vh 30vh;
+    }
+
+    /* все текстовые блоки-преимущества */
+    .f {
+        width: 100%;
+        color: rgb(0, 0, 0);
+
+        grid-column: 2/3;
+
+        font-size: 1rem;
+    }
+
+    .f::first-line {
+        font-size: 1.8rem;
+    }
+
+    .f1 {
+        grid-row: 1/2;
+    }
+
+    .f2 {
+        grid-row: 2/3;
+    }
+
+    .f3 {
+        grid-row: 3/4;
+    }
+
+    .icon {
+        grid-column: 1/2;
+    }
+
+    /* контейнер для фото и прямоугольника */
+    #ftrphoto {
+        grid-row: 2/3;
+        grid-column: 2/3;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    /* фото справа */
+    .fphoto {
+        height: 377px;
+        width: auto;
+
+        grid-row: 1/2;
+        grid-column: 1/2;
+
+        margin-left: 5%;
+    }
+
+    /* цветной прямоугольник */
+    .frectangle {
+        background-color: rgb(255, 200, 57);
+
+        height: 277px;
+        width: 221px;
+        grid-row: 1/2;
+        grid-column: 1/2;
+        z-index: -1;
+        align-self: flex-start;
+        margin-top: 10%;
+    }
+
+    /* секция со статьей и тремя картинками справа */
+    #collection {
+        grid-area: collection;
+
+        width: 100%;
+    }
+
+    /* контейнер для статьи слева */
+    #colarticle {
+        float: left;
+        box-sizing: border-box;
+        height: auto;
+        width: 50%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    /* контейнер для трех фото справа */
+    #colgallery {
+        height: max-content;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
 }
 
+/*______________________________________________________________________*/
+
 /* large desktops and laptops */
-@media (min-width: 1201px) {
+@media (min-width: 1200px) {
 
     /* основной блок, грид-элемент, грид-контейнер из 12 колонок для хедера, заголовка, интро и поля поиска */
     #main {
@@ -917,7 +1385,15 @@ a {
         grid-template-rows: repeat(9, 1fr);
     }
 
+    /*#background {
+        grid-row: 1/10;
+        grid-column: 1/3;
+        z-index: -1;
+        width: 100%;
+    }*/
+
     /* хедер, грид-элемент, грид-контейнер для лого и меню */
+
     #header {
         grid-row: 1/2;
         grid-column: 1/3;
@@ -982,7 +1458,7 @@ a {
         grid-row: 7/9;
         grid-column: 1/3;
 
-        width: 80%;
+        width: 70%;
         padding: 10px;
         margin: 0 5%;
 
@@ -1097,6 +1573,15 @@ a {
         align-items: center;
     }
 
+    /* текст внутри блока */
+    .expltext {
+        font-family: Nunito, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1rem;
+    }
+
+
     .arrow {
         background-color: rgb(255, 200, 57);
 
@@ -1113,6 +1598,132 @@ a {
         font-weight: bold;
         font-size: 1rem;
         padding: auto;
+    }
+
+    /* третий блок, грид-элемент, грид-контейнер для преимуществ, иконок, фото и цветного прямоугольника */
+    #features {
+        /*background-color: darkkhaki;*/
+        grid-area: features;
+
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 10% 90%;
+        grid-gap: 3rem;
+    }
+
+    /* заголовок второго блока */
+    #fh2 {
+        padding-left: 10%;
+        grid-row: 1/2;
+        grid-column: 1/2;
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+    }
+
+    /* контейнер для строк преимуществ и иконок */
+    #ftr {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        padding-left: 10%;
+
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 30vh 30vh 30vh;
+    }
+
+    /* все текстовые блоки-преимущества */
+    .f {
+        width: 100%;
+        color: rgb(0, 0, 0);
+
+        grid-column: 2/3;
+
+        font-size: 1.3em;
+    }
+
+    .f::first-line {
+        font-size: 2em;
+    }
+
+    .f1 {
+        grid-row: 1/2;
+    }
+
+    .f2 {
+        grid-row: 2/3;
+    }
+
+    .f3 {
+        grid-row: 3/4;
+    }
+
+    .icon {
+        grid-column: 1/2;
+    }
+
+    /* контейнер для фото и прямоугольника */
+    #ftrphoto {
+        grid-row: 2/3;
+        grid-column: 2/3;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    /* фото справа */
+    .fphoto {
+        height: 477px;
+        width: auto;
+
+        grid-row: 1/2;
+        grid-column: 1/2;
+
+        margin-left: 5%;
+    }
+
+    /* цветной прямоугольник */
+    .frectangle {
+        background-color: rgb(255, 200, 57);
+
+        height: 377px;
+        width: 321px;
+        grid-row: 1/2;
+        grid-column: 1/2;
+        z-index: -1;
+        align-self: flex-start;
+        margin-top: 10%;
+    }
+
+    /* секция со статьей и тремя картинками справа */
+    #collection {
+        grid-area: collection;
+
+        width: 100%;
+
+        /*display: grid;
+    grid-template-columns: 1fr 60%;
+    grid-gap: 5%;*/
+    }
+
+    /* контейнер для статьи слева */
+    #colarticle {
+        float: left;
+        box-sizing: border-box;
+        height: auto;
+        width: 50%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    /* контейнер для трех фото справа */
+    #colgallery {
+        height: max-content;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
     }
 }
 
@@ -1146,24 +1757,6 @@ a {
     grid-column: 4/5;
 }
 
-/*  
-@media (max-width: 320px) {
-@media (min-width: 321px) and (max-width: 480px) {}
-@media (orientation: landscape),
-(min-width: 481px) and (max-width: 760px) {}
-@media (min-width: 761px) and (max-width: 1200px) {}
-@media (min-width: 1201px) {}*/
-
-
-
-/* текст внутри блока */
-.expltext {
-    font-family: Nunito, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1rem;
-}
-
 /* появление цвета при наведении на блок */
 .expl:hover {
     background-color: rgb(255, 200, 57);
@@ -1173,118 +1766,6 @@ a {
     background-color: rgb(255, 255, 255);
 }
 
-/* третий блок, грид-элемент, грид-контейнер для преимуществ, иконок, фото и цветного прямоугольника */
-#features {
-    /*background-color: darkkhaki;*/
-    grid-area: features;
-
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(auto-fill(1fr));
-    grid-gap: 2rem;
-}
-
-/* заголовок второго блока */
-#fh2 {
-    grid-row: 1/2;
-    grid-column: 2/7;
-    font-size: 36px;
-    font-weight: 600;
-    color: rgb(0, 0, 0);
-}
-
-/* все текстовые блоки-преимущества */
-.feature {
-    height: 60px;
-    width: auto;
-    color: rgb(0, 0, 0);
-}
-
-/* фото справа */
-.fphoto {
-    height: 477px;
-    width: auto;
-
-    grid-row: 2/5;
-    grid-column: 8/11;
-}
-
-/* цветной прямоугольник */
-.frectangle {
-    background-color: rgb(255, 200, 57);
-
-    height: 377px;
-    width: 321px;
-
-    margin: 15%;
-
-    grid-row: 2/5;
-    grid-column: 7/11;
-
-    z-index: -1;
-}
-
-/* иконки преимуществ */
-.icon1 {
-    grid-row: 2/3;
-    grid-column: 2/3;
-}
-
-.icon2 {
-    grid-row: 3/4;
-    grid-column: 2/3;
-}
-
-.icon3 {
-    grid-row: 4/5;
-    grid-column: 2/3;
-}
-
-/* расположение текстовых-блоков */
-.f1 {
-    grid-row: 2/3;
-    grid-column: 3/7;
-
-    font-size: 2em;
-}
-
-.f2 {
-    grid-row: 2/3;
-    grid-column: 3/7;
-
-    align-self: center;
-    font-size: 1em;
-}
-
-.f3 {
-    grid-row: 3/4;
-    grid-column: 3/7;
-
-    font-size: 2em;
-}
-
-.f4 {
-    grid-row: 3/4;
-    grid-column: 3/7;
-
-    align-self: center;
-    font-size: 1em;
-}
-
-.f5 {
-    grid-row: 4/5;
-    grid-column: 3/7;
-
-    font-size: 2em;
-}
-
-.f6 {
-    grid-row: 4/5;
-    grid-column: 3/7;
-
-    align-self: center;
-    font-size: 1em;
-}
 
 /* секция для отправки телефона */
 #telephone {
@@ -1367,66 +1848,44 @@ a {
 /* секция-галерея картинок */
 #gallery {
     grid-area: gallery;
-
     width: 100%;
-
-    /*display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    margin: 10%;*/
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /*grid-template-rows: 10% 1fr;*/
-    grid-gap: 1.5em;
-    padding: 5%;
 }
 
 /* заголовок секции-галерея картинок */
 #galh2 {
-    width: 50%;
+    width: 100%;
+    padding-left: 5%;
     color: rgb(0, 0, 0);
     font-weight: 600;
     font-style: normal;
     font-size: 2em;
-
-    grid-column: 1/5;
-
 }
 
-/* контейнер с картинками 
-#gal {
-    width: 100%;
+.gal {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-template-rows: repeat(2, 1fr);
-    grid-gap: 15px;
-}*/
+    grid-gap: 1.5em;
+    padding: 5%;
+}
 
 .galphoto {
-    width: 193px;
-    height: 306px;
+    object-fit: cover;
+    /*width: 193px;
+    height: 306px;*/
 }
 
-/* секция со статьей и тремя картинками справа */
-#collection {
-    grid-area: collection;
+/* кнопка под статьей */
+.colbutton {
+    border: none;
+    background-color: rgb(255, 200, 57);
+    box-shadow: (0px 4px 22px rgba(0, 0, 0, 0.16));
+    width: 216px;
+    height: 40px;
 
-    width: 100%;
-
-    /*display: grid;
-    grid-template-columns: 1fr 60%;
-    grid-gap: 5%;*/
-}
-
-/* контейнер для статьи слева */
-#colarticle {
-    float: left;
-    box-sizing: border-box;
-    height: auto;
-    width: 50%;
-    padding-left: 5%;
-    padding-right: 5%;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5em;
 }
 
 /* заголовок статьи */
@@ -1446,31 +1905,9 @@ a {
     line-height: 1.4em;
 }
 
-/* кнопка под статьей */
-.colbutton {
-    border: none;
-    background-color: rgb(255, 200, 57);
-    box-shadow: (0px 4px 22px rgba(0, 0, 0, 0.16));
-    width: 216px;
-    height: 40px;
-
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.5em;
-}
-
-/* контейнер для трех фото справа */
-#colgallery {
-    height: 420px;
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-
 /* каждое фото в контейнере */
 .colphoto {
-    height: 420px;
+    height: 100%;
     margin: 1%;
 }
 
@@ -1610,3 +2047,16 @@ a {
     max-width: 100%;
     margin-bottom: 5%;
 }
+
+
+
+
+
+
+/*  
+@media (max-width: 320px) {
+@media (min-width: 321px) and (max-width: 480px) {}
+@media (orientation: landscape),
+(min-width: 481px) and (max-width: 760px) {}
+@media (min-width: 761px) and (max-width: 1200px) {}
+@media (min-width: 1201px) {}*/
