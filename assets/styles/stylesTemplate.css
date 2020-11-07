@@ -3,7 +3,7 @@ html {
     font-family: Nunito, sans-serif;
 }
 
-/* настройки тела документа, грид-контейнер из 12 колонок и 8 строк */
+/* настройки тела документа, грид-контейнер */
 body {
     width: 100%;
     display: grid;
@@ -403,6 +403,7 @@ a {
         grid-area: footer;
     }
 
+    /* футер */
     #navfooter {
         width: 80%;
         height: 50px;
@@ -421,10 +422,12 @@ a {
         align-items: center;
     }
 
+    /* меню футера */
     #navfooter .nf {
         margin: 10px;
     }
 
+    /* блок с городами */
     #cities {
         margin: 0 5%;
 
@@ -433,6 +436,7 @@ a {
         justify-content: space-between;
     }
 
+    /* заголовок блока с городами */
     #footh3 {
         font-family: Nunito, sans-serif;
         font-weight: 600;
@@ -440,16 +444,19 @@ a {
         font-size: 2em;
     }
 
+    /* страны */
     .country {
         color: rgb(229, 229, 229);
         font-weight: 400;
         font-size: 2rem;
     }
 
+    /* города-ссылки */
     .city {
         display: none;
     }
 
+    /* блок с контактами */
     #contacts {
         display: grid;
         grid-template-columns: 1fr 3fr 2fr;
@@ -458,6 +465,7 @@ a {
         margin: 2% 0 0 10%;
     }
 
+    /* блок с адресами */
     .address {
         width: 100%;
         display: flex;
@@ -470,10 +478,12 @@ a {
         font-size: 1.5rem;
     }
 
+    /* адрес */
     .adr {
         margin: 11px 0;
     }
 
+    /* блок с иконками приложений */
     .app {
         display: flex;
         flex-direction: row;
@@ -481,11 +491,13 @@ a {
         justify-content: space-around;
     }
 
+    /* лого гугл приложения */
     .gpl {
         max-width: 100%;
         margin-bottom: 5%;
     }
 
+    /* лого ап стора */
     .aps {
         max-width: 100%;
         margin-bottom: 5%;
@@ -857,6 +869,7 @@ a {
         font-size: 2em;
     }
 
+    /* футер */
     #footer {
         background-color: rgb(9, 58, 122);
         color: #ffffff;
@@ -865,11 +878,11 @@ a {
         grid-area: footer;
     }
 
+    /* меню футера */
     #navfooter {
         width: 80%;
         height: 50px;
         margin: 10% 10% 15% 10%;
-
 
         font-weight: 400;
         font-style: normal;
@@ -883,10 +896,12 @@ a {
         align-items: center;
     }
 
+    /* элементы меню */
     #navfooter .nf {
         margin: 10px;
     }
 
+    /* блок с городами */
     #cities {
         margin: 0 5%;
 
@@ -895,6 +910,7 @@ a {
         justify-content: space-between;
     }
 
+    /* заголовок блока со городами */
     #footh3 {
         font-family: Nunito, sans-serif;
         font-weight: 600;
@@ -902,16 +918,19 @@ a {
         font-size: 2em;
     }
 
+    /* страны */
     .country {
         color: rgb(229, 229, 229);
         font-weight: 400;
         font-size: 1.3em;
     }
 
+    /* города-ссылки */
     .city {
         display: none;
     }
 
+    /* блок с контактами */
     #contacts {
         display: grid;
         grid-template-columns: 1fr 3fr 2fr;
@@ -919,6 +938,7 @@ a {
         margin: 2% 0 0 10%;
     }
 
+    /* блок с адресами */
     .address {
         width: 100%;
         display: flex;
@@ -931,10 +951,12 @@ a {
         font-size: 0.8rem;
     }
 
+    /* адрес */
     .adr {
         margin: 11px 0;
     }
 
+    /* блок с приложениями */
     .app {
         display: flex;
         flex-direction: row;
@@ -942,18 +964,20 @@ a {
         justify-content: space-around;
     }
 
+    /* лого гугл приложения */
     .gpl {
         max-width: 100%;
         margin-bottom: 5%;
     }
 
+    /* лого ап стора */
     .aps {
         max-width: 100%;
         margin-bottom: 5%;
     }
 }
 
-/* landscape phones and tablets */
+/* phones and tablets */
 @media (min-width: 480px) and (max-width: 759px) {
     #main {
         background: linear-gradient(0.87deg, rgba(2, 55, 135, 0.9) 0.69%, rgba(81, 38, 174, 0.4736) 100.48%, rgba(38, 92, 174, 0.0102906) 100.49%, rgba(195, 195, 196, 0.00520833) 100.5%, #76A6EF 100.51%);
@@ -1288,6 +1312,10 @@ a {
         padding-right: 5%;
     }
 
+    .colphoto3 {
+        display: none;
+    }
+
     /* блок со статьей и ссылками */
     #furniture {
         grid-area: furniture;
@@ -1320,6 +1348,7 @@ a {
         font-size: 2em;
     }
 
+    /* футер */
     #footer {
         background-color: rgb(9, 58, 122);
         color: #ffffff;
@@ -1328,11 +1357,11 @@ a {
         grid-area: footer;
     }
 
+    /* меню футера */
     #navfooter {
         width: 80%;
         height: 50px;
         margin: 0 10%;
-
 
         font-weight: 400;
         font-style: normal;
@@ -1346,10 +1375,12 @@ a {
         align-items: center;
     }
 
+    /* блок с городами */
     #cities {
         margin: 0 10%;
     }
 
+    /* заголовок блока с городами */
     #footh3 {
         font-family: Nunito, sans-serif;
         ;
@@ -1358,17 +1389,20 @@ a {
         font-size: 2em;
     }
 
+    /* страны */
     .country {
         color: rgb(229, 229, 229);
         font-weight: 400;
         font-size: 1.5em;
     }
 
+    /* города-ссылки */
     .city {
         margin: 0 2% 0 0;
         font-size: 1em;
     }
 
+    /* блок с контактами */
     #contacts {
         display: grid;
         grid-template-columns: 1fr 3fr 2fr;
@@ -1376,6 +1410,7 @@ a {
         margin: 2% 0 0 10%;
     }
 
+    /* блок с адресами */
     .address {
         width: 100%;
         display: flex;
@@ -1388,10 +1423,12 @@ a {
         font-size: 0.8rem;
     }
 
+    /* адрес */
     .adr {
         margin: 11px 0;
     }
 
+    /* иконки приложений */
     .app {
         display: flex;
         flex-direction: row;
@@ -1399,11 +1436,13 @@ a {
         justify-content: space-around;
     }
 
+    /* лого гугл приложения */
     .gpl {
         max-width: 100%;
         margin-bottom: 5%;
     }
 
+    /* лого ап стора */
     .aps {
         max-width: 100%;
         margin-bottom: 5%;
@@ -1747,6 +1786,10 @@ a {
         padding-right: 5%;
     }
 
+    .colphoto3 {
+        display: none;
+    }
+
     /* контейнер для трех фото справа */
     #colgallery {
         height: max-content;
@@ -1788,6 +1831,7 @@ a {
         font-size: 2em;
     }
 
+    /* футер */
     #footer {
         background-color: rgb(9, 58, 122);
         color: #ffffff;
@@ -1796,11 +1840,11 @@ a {
         grid-area: footer;
     }
 
+    /* меню футера */
     #navfooter {
         width: 80%;
         height: 50px;
         margin: 0 10%;
-
 
         font-weight: 400;
         font-style: normal;
@@ -1814,28 +1858,32 @@ a {
         align-items: center;
     }
 
+    /* блок с городами */
     #cities {
         margin: 0 10%;
     }
 
+    /* заголовок блока с городами */
     #footh3 {
         font-family: Nunito, sans-serif;
-        ;
         font-weight: 600;
         font-style: normal;
         font-size: 2em;
     }
 
+    /* страны */
     .country {
         color: rgb(229, 229, 229);
         font-weight: 400;
         font-size: 1.3em;
     }
 
+    /* города-ссылки */
     .city {
         margin: 0 2% 0 0;
     }
 
+    /* блок с контактами */
     #contacts {
         display: grid;
         grid-template-columns: 1fr 3fr 2fr;
@@ -1843,6 +1891,7 @@ a {
         margin: 2% 0 0 10%;
     }
 
+    /* блок с адресами */
     .address {
         width: 100%;
         display: flex;
@@ -1852,13 +1901,15 @@ a {
 
         font-weight: 400;
         font-style: normal;
-        font-size: 0.8rem;
+        font-size: 0.7em;
     }
 
+    /* адрес */
     .adr {
         margin: 11px 0;
     }
 
+    /* блок с иконками приложений */
     .app {
         display: flex;
         flex-direction: row;
@@ -1866,11 +1917,13 @@ a {
         justify-content: space-around;
     }
 
+    /* лого гугл приложения */
     .gpl {
         max-width: 100%;
         margin-bottom: 5%;
     }
 
+    /* лого ап стора */
     .aps {
         max-width: 100%;
         margin-bottom: 5%;
@@ -2272,6 +2325,7 @@ a {
         font-size: 2em;
     }
 
+    /* футер */
     #footer {
         background-color: rgb(9, 58, 122);
         color: #ffffff;
@@ -2280,11 +2334,11 @@ a {
         grid-area: footer;
     }
 
+    /* меню футера */
     #navfooter {
         width: 80%;
         height: 50px;
         margin: 0 10%;
-
 
         font-weight: 400;
         font-style: normal;
@@ -2298,28 +2352,32 @@ a {
         align-items: center;
     }
 
+    /* блок с городами */
     #cities {
         margin: 0 10%;
     }
 
+    /* заголовок блока с городами */
     #footh3 {
         font-family: Nunito, sans-serif;
-        ;
         font-weight: 600;
         font-style: normal;
         font-size: 2em;
     }
 
+    /* страны */
     .country {
         color: rgb(229, 229, 229);
         font-weight: 400;
         font-size: 1.3em;
     }
 
+    /* города-ссылки */
     .city {
         margin: 0 2% 0 0;
     }
 
+    /* блок с контактами */
     #contacts {
         display: grid;
         grid-template-columns: 1fr 3fr 2fr;
@@ -2327,6 +2385,7 @@ a {
         margin: 2% 0 0 10%;
     }
 
+    /* блок с адресами */
     .address {
         width: 100%;
         display: flex;
@@ -2339,10 +2398,12 @@ a {
         font-size: 0.7em;
     }
 
+    /* адрес */
     .adr {
         margin: 11px 0;
     }
 
+    /* блок с иконками приложений */
     .app {
         display: flex;
         flex-direction: row;
@@ -2350,17 +2411,17 @@ a {
         justify-content: space-around;
     }
 
+    /* лого гугл приложения */
     .gpl {
         max-width: 100%;
         margin-bottom: 5%;
     }
 
+    /* лого ап стора */
     .aps {
         max-width: 100%;
         margin-bottom: 5%;
     }
-
-
 }
 
 /*#background {
